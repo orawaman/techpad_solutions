@@ -14,46 +14,165 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <nav id="navb" class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="#">TechPad!</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>   
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="about.html">About</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    See more
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Technology</a>
-                    <a class="dropdown-item" href="#">Web Development</a>
-                    <a class="dropdown-item" href="#">Tech Fun</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Write for us</a>
-                </div>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/contact.html">Contact Us</a>
-            </li>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="about.html">About</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            See more
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Technology</a>
+            <a class="dropdown-item" href="#">Web Development</a>
+            <a class="dropdown-item" href="#">Tech Fun</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Write for us</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact.html">Contact Us</a>
+        </li>
 
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0 bg-dark" type="submit">Search</button>
-        </form>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0 bg-dark" type="submit">Search</button>
+      </form>
     </div>
-</nav>
+    <div>
+      <button class="btn btn-dark bg-secondary mx-1" data-toggle="modal" data-target="#loginModal">LogIn</button>
+      <button class="btn btn-dark bg-info" data-toggle="modal" data-target="#signinModal">SignIn</button>
+    </div>
+    </div>
+  </nav>
 
+  <!-- Log In Modal -->
+  <div class="modal" id="loginModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Log in to TecPad!</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="InputEmail1">Email address</label>
+              <input type="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp" required>
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                else.</small>
+            </div>
+            <div class="form-group">
+              <label for="InputPassword1">Password</label>
+              <input type="password" class="form-control" id="InputPassword1" required>
+            </div>
+            <button type="submit" class="btn btn-primary float-right mx-2">Log In</button>
+            <button type="button" class="btn btn-secondary float-right mx-2" data-dismiss="modal">Close</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Sign In Modal -->
+  <div class="modal" id="signinModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Crete an TechPad! account</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="InputName1">Full Name</label>
+              <input type="text" class="form-control" id="InputName1" aria-describedby="nameHelp" required>
+              <label for="InputEmail1">Email address</label>
+              <input type="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp" required>
+            </div>
+            <div class="form-group">
+              <label for="InputPassword1">Password</label>
+              <input type="password" class="form-control" id="InputPassword1" required>
+            </div>
+            <div class="form-group">
+              <label for="reInputPassword1">Re-enter Password</label>
+              <input type="password" class="form-control" id="reInputPassword1" required>
+            </div>
+            <button type="submit" class="btn btn-primary float-right mx-2">Sign In</button>
+            <button type="button" class="btn btn-secondary float-right mx-2" data-dismiss="modal">Close</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container my-4">
+    <div class="row featurette d-flex justify-content-center align-items-center">
+      <div class="col-md-7">
+        <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span>
+        </h2>
+        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod
+          semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus
+          commodo.</p>
+      </div>
+      <div class="col-md-5">
+        <img src="https://source.unsplash.com/600x400/?technology,web,development" alt=""
+          class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500"
+          style="border-radius:6px">
+
+      </div>
+    </div>
+    <div class="row featurette d-flex justify-content-center align-items-center">
+      <div class="col-md-5">
+        <img src="https://source.unsplash.com/600x400/?technology,,development" alt=""
+          class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500"
+          style="border-radius:6px">
+      </div>
+      <div class="col-md-7">
+        <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span>
+        </h2>
+        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod
+          semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus
+          commodo.</p>
+      </div>
+
+    </div>
+    <div class="row featurette d-flex justify-content-center align-items-center">
+      <div class="col-md-7">
+        <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span>
+        </h2>
+        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod
+          semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus
+          commodo.</p>
+      </div>
+      <div class="col-md-5">
+        <img src="https://source.unsplash.com/600x400/?technology,web," alt=""
+          class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500"
+          style="border-radius:6px">
+      </div>
+    </div>
+  </div>
+
+  <footer class="container">
+    <p class="float-right"><a href="#navb">Back to top</a></p>
+    <p>© 2023-2024 TechPad!, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
+  </footer>
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
